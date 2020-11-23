@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layouts/layout.html}">
+<head>
+<title>Content page</title>
+<script src="content-script.js"></script>
+</head>
+<body>
+	<section layout:fragment="content">
+		<p>This is a paragraph from the content page</p>
+	
+
+	<!-- DataTales Example -->
+	<div class="card shadow mb-4">
+		<div class="card-header py-3">
+			<h6 class="m-0 font-weight-bold text-primary">Table Positions</h6>
+		</div>
+		<div class="card-body">
+			<div class="table-responsive">
+				<table class="table table-bordered" id="dataTable" width="100%"
+					cellspacing="0">
+					<thead>
+						<tr>
+							<th>Site</th>
+							<th>Position</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<!-- <tfoot>
+						<tr >
+							<th th:text="${position.site}></th>
+							<th>Position</th>
+							<th>Office</th>
+							<th>Age</th>
+							<th>Start date</th>
+							<th>Salary</th>
+						</tr>
+					</tfoot> -->
+					<tbody>
+						<tr th:each="position : ${positions}">
+							<td th:text="${position.site}"></td>
+							<td th:text="${position.title}"></td>
+							<td>
+								<a th:href="@{edit-position?idPosition=} + ${position.id}" class="fas fa-edit" title="edit"></a>
+								<a th:href="@{delete-position?idPosition=} + ${position.id}" class="fas fa-trash" title="delete"></a>
+								<a th:href="@{detail-position?idPosition=} + ${position.id}" class="fas fa-list" title="detail"></a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+</body>
+</html>
