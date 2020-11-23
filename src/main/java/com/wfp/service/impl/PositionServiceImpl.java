@@ -45,11 +45,7 @@ public class PositionServiceImpl implements PositionService {
 	public void delete(Position position) {repository.delete(position);
 	}
 
-	@Override
-	public List<Position> findAllByUser(String email) {
-		System.out.println(email);
-		return repository.findByUserEmail(email);
-	}
+	
 
 	
 

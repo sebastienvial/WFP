@@ -28,7 +28,7 @@ public class PositionControllerRest {
     @ResponseBody
 	public List<Position> listPositionsByUser(@RequestParam("email") String email) {
     	System.out.println(email);
-	 	return positionService.findAllByUser(email);
+	 	return positionService.findAll();
      }
     
     

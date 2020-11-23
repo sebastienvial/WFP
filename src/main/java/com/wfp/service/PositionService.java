@@ -9,7 +9,7 @@ public interface PositionService {
 	
 	Optional<Position> findOne (Integer id);
 	List<Position> findAll();
-	List<Position> findByUser(String email);
+	//List<Position> findByUser(String email);
 	void save(Position position);
 	void update(Position position);
 	void delete(Integer id);

@@ -9,7 +9,6 @@ import com.wfp.service.UserService;
 import com.wfp.models.User;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @RestController
