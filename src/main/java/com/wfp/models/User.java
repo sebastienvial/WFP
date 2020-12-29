@@ -11,45 +11,75 @@ public class User {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-    private String localId;
-    private String groupId;
     private String firstName;
     private String lastName;
     private String email;
-    private String site;
+	private String site;
+	private String imageUrl;
+	private String primaryPl;
+	private String title;
+	private String role;
+	private String expertise;
+	private String cl;
 
     public User() {
     	
     }
 
-	public User(String localId, String groupId, String fisrtName, String lastName, String email, String site) {
+	public User(String primaryPl, String imageUrl, String fisrtName, String lastName, String email, String site, String title) {
 		super();
-		this.localId = localId;
-		this.groupId = groupId;
+		this.primaryPl = primaryPl;
+		this.imageUrl = imageUrl;
 		this.firstName = fisrtName;
 		this.lastName = lastName;
 		this.email = email;
 		this.site = site;
+		this.title = title;
 	}
 	
     
-    public String getLocalId() {
-		return localId;
+    public Integer getId() {
+		 return id;
+	}
+
+	public String getCl() {
+		return cl;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public String getExpertise() {
+		return expertise;
 	}
 
 
-	public void setLocalId(String localId) {
-		this.localId = localId;
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getPrimaryPl() {
+		return primaryPl;
 	}
 
 
-	public String getGroupId() {
-		return groupId;
+	public void setPrimaryPl(String primaryPl) {
+		this.primaryPl = primaryPl;
 	}
 
 
-	public void setGroupId(String groupId) {
-		this.groupId = groupId;
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
 	}
 
 

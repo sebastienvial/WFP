@@ -10,29 +10,34 @@ import com.wfp.models.User;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class UserControllerRest {
 
     @Autowired
     private UserService userService;
-	private List<User> lres;
 
     
     @GetMapping("users") 
 	public List<User> listUsers(@RequestParam("site") String site) {
-    	System.out.println("le site choisi:" + site);
     	List<User> l = userService.findAll();
-    	lres = new ArrayList<>();
+		List<User> lres = new ArrayList<>();
+		String msite = "BSA"; 
+		if (!site.isEmpty()) msite = site;
     	for (User user : l) {
-    		//System.out.println(user.getSite());
-			if (user.getSite().equals(site)){				
+			if (user.getSite().equals(msite)){				
 				lres.add(user);
 			}
 		}
     	
 		return lres;
-    }
+	}
+	
+	@GetMapping("user")
+	public Optional<User> getUser(@RequestParam("id") Integer id) {
+		return userService.findOne(id);
+	}
     
         
 }
